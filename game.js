@@ -10,7 +10,7 @@ function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
   newSequence.push(buttonList[randomNumber]);
   animate(buttonList[randomNumber]);
-  new Audio(`sounds/${buttonList[randomNumber]}.mp3`).play();
+  new Audio(`./sounds/${buttonList[randomNumber]}.mp3`).play();
   console.log(newSequence);
 }
 
@@ -23,7 +23,7 @@ function animate(color) {
 
 function checkSequence(color) {
   animate(color);
-  new Audio(`sounds/${color}.mp3`).play();
+  new Audio(`./sounds/${color}.mp3`).play();
   if (newSequence[count] === color) {
     count++;
     console.log("count " + count);
@@ -31,7 +31,7 @@ function checkSequence(color) {
       setTimeout(nextSequence, 1000);
     }
   } else {
-    new Audio("sounds/wrong.mp3").play();
+    new Audio("./sounds/wrong.mp3").play();
     $("body").addClass("game-over");
     setTimeout(function () {
       $("body").removeClass("game-over");
